@@ -1,0 +1,131 @@
+.detail{
+    &__tab{
+        padding-block: 22px;
+        ul{
+            gap: 32px;
+            li{
+                a{
+                    display: inline-block;
+                    @include typo($font,12px,400,30px,$color-text);
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    position: relative;
+                    &.active{
+                        color: $color-primary;
+                        border-bottom: 1px solid $color-primary;
+                    }
+                    &:not(.active) {
+                        &:hover{
+                            color: $color-primary;
+                            &::before{
+                                transform: scaleX(1);
+                                transform-origin: bottom left;
+                            }
+                        }
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        transform: scaleX(0);
+                        height: 1px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $color-primary;
+                        transform-origin: bottom right;
+                        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+                    }
+                }
+            }
+        }
+    }
+    &__content{
+        background-color: #f6f1eb;
+        padding-top: 170px;
+        padding-bottom: 270px;
+    }
+    &__desc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img {
+        position: relative;
+    
+        .location {
+            position: absolute;
+            width: 265px;
+            height: 73px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            @include typo($font, 12px, 400, 18px, #fff);
+            transition: all 0.2s ease-in-out;
+            .circle {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #75604B;
+                position: absolute;
+    
+                &.d2 {
+                    left: 75px;
+                    bottom: 0;
+                }
+    
+                &.d1 {
+                    left: 75px;
+                    bottom: 10px;
+                }
+    
+                &.d4 {
+                    bottom: 0;
+                    left: 15px;
+                }
+    
+                &.d3 {
+                    bottom: 10px;
+                    left: 15px;
+                }
+            }
+    
+            &.d2 {
+                left: 295px;
+                top: 65px;
+                background-color: #899ec1cc;
+                &:hover{
+                    cursor: pointer;
+                    background-color: #899ec1cc;
+                }
+                &:hover ~ .location.d1 {
+                    background-color: #899ec1cc;
+                }
+                &:hover ~ .location.d3 {
+                    background-color: #899ec1cc;
+                }
+                &:hover ~ .location.d4 {
+                    background-color: #899ec1cc;
+                }
+            }
+    
+            &.d1 {
+                top: 160px;
+                left: 293px;
+            }
+    
+            &.d4 {
+                top: 70px;
+                right: 180px;
+            }
+    
+            &.d3 {
+                top: 163px;
+                right: 185px;
+            }
+        }
+    }
+}

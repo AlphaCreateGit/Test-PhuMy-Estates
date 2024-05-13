@@ -1,0 +1,60 @@
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    &__menu{
+        gap: 24px;
+        li{
+            a{
+                display: inline-block;
+                @include typo($font,12px,400,30px,$color-text);
+                text-transform: uppercase;
+                text-decoration: none;
+                position: relative;
+                &.active{
+                    color: $color-primary;
+                    border-bottom: 1px solid $color-primary;
+                }
+                &:not(.active) {
+                    &:hover{
+                        color: $color-primary;
+                        &::before{
+                            transform: scaleX(1);
+                            transform-origin: bottom left;
+                        }
+                    }
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $color-primary;
+                    transform-origin: bottom right;
+                    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+                }
+            }
+        }
+    }
+    &__logo{
+        background:url('../images/logo.svg') no-repeat;
+        background-position: center;
+        width: 84px;
+        height: 72px;
+        transition: all 0.3s ease-in-out;
+        &.navbar--scroll{
+            background:url('../images/logo_active.svg') no-repeat;
+            height: 42px;
+        }
+    }
+    &__container{
+        gap:48px;
+        padding-block: 12px;
+    }
+}

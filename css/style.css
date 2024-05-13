@@ -1,0 +1,265 @@
+@font-face {
+  font-family: "SVNAdero";
+  font-weight: 300;
+  src: url("../fonts/SVN-Adero-Light.eot?") format("eot"), url("../fonts/SVN-Adero-Light.woff2") format("woff2"), url("../fonts/SVN-Adero-Light.woff") format("woff"), url("../fonts/SVN-Adero-Light.ttf") format("truetype"), url('../fonts/SVN-Adero-Light.svg#str-replace(SVNAdero, " ", "_")') format("svg");
+  font-display: swap; /* or block, swap, fallback, optional */
+}
+@font-face {
+  font-family: "SVNAdero";
+  font-weight: 400;
+  src: url("../fonts/SVN-Adero-Regular.eot?") format("eot"), url("../fonts/SVN-Adero-Regular.woff2") format("woff2"), url("../fonts/SVN-Adero-Regular.woff") format("woff"), url("../fonts/SVN-Adero-Regular.ttf") format("truetype"), url('../fonts/SVN-Adero-Regular.svg#str-replace(SVNAdero, " ", "_")') format("svg");
+  font-display: swap; /* or block, swap, fallback, optional */
+}
+@font-face {
+  font-family: "SVNAdero";
+  font-weight: 600;
+  src: url("../fonts/SVN-Adero-SemiBold.eot?") format("eot"), url("../fonts/SVN-Adero-SemiBold.woff2") format("woff2"), url("../fonts/SVN-Adero-SemiBold.woff") format("woff"), url("../fonts/SVN-Adero-SemiBold.ttf") format("truetype"), url('../fonts/SVN-Adero-SemiBold.svg#str-replace(SVNAdero, " ", "_")') format("svg");
+  font-display: swap; /* or block, swap, fallback, optional */
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.header__menu {
+  gap: 24px;
+}
+.header__menu li a {
+  display: inline-block;
+  font-family: "SVNAdero", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #75604B;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+}
+.header__menu li a.active {
+  color: #009337;
+  border-bottom: 1px solid #009337;
+}
+.header__menu li a:not(.active):hover {
+  color: #009337;
+}
+.header__menu li a:not(.active):hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.header__menu li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #009337;
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__logo {
+  background: url("../images/logo.svg") no-repeat;
+  background-position: center;
+  width: 84px;
+  height: 72px;
+  transition: all 0.3s ease-in-out;
+}
+.header__logo.navbar--scroll {
+  background: url("../images/logo_active.svg") no-repeat;
+  height: 42px;
+}
+.header__container {
+  gap: 48px;
+  padding-block: 12px;
+}
+
+.banner__image {
+  height: 100vh;
+  width: 100%;
+}
+.banner__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.t {
+  height: 200vh;
+}
+
+.detail__tab {
+  padding-block: 22px;
+}
+.detail__tab ul {
+  gap: 32px;
+}
+.detail__tab ul li a {
+  display: inline-block;
+  font-family: "SVNAdero", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #75604B;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+}
+.detail__tab ul li a.active {
+  color: #009337;
+  border-bottom: 1px solid #009337;
+}
+.detail__tab ul li a:not(.active):hover {
+  color: #009337;
+}
+.detail__tab ul li a:not(.active):hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.detail__tab ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #009337;
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.detail__content {
+  background-color: #f6f1eb;
+  padding-top: 170px;
+  padding-bottom: 270px;
+}
+.detail__desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail__img {
+  position: relative;
+}
+.detail__img .location {
+  position: absolute;
+  width: 265px;
+  height: 73px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  font-family: "SVNAdero", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.detail__img .location .circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #75604B;
+  position: absolute;
+}
+.detail__img .location .circle.d2 {
+  left: 75px;
+  bottom: 0;
+}
+.detail__img .location .circle.d1 {
+  left: 75px;
+  bottom: 10px;
+}
+.detail__img .location .circle.d4 {
+  bottom: 0;
+  left: 15px;
+}
+.detail__img .location .circle.d3 {
+  bottom: 10px;
+  left: 15px;
+}
+.detail__img .location.d2 {
+  left: 295px;
+  top: 65px;
+  background-color: rgba(137, 158, 193, 0.8);
+}
+.detail__img .location.d2:hover {
+  cursor: pointer;
+  background-color: rgba(137, 158, 193, 0.8);
+}
+.detail__img .location.d2:hover ~ .location.d1 {
+  background-color: rgba(137, 158, 193, 0.8);
+}
+.detail__img .location.d2:hover ~ .location.d3 {
+  background-color: rgba(137, 158, 193, 0.8);
+}
+.detail__img .location.d2:hover ~ .location.d4 {
+  background-color: rgba(137, 158, 193, 0.8);
+}
+.detail__img .location.d1 {
+  top: 160px;
+  left: 293px;
+}
+.detail__img .location.d4 {
+  top: 70px;
+  right: 180px;
+}
+.detail__img .location.d3 {
+  top: 163px;
+  right: 185px;
+}
+
+/*# sourceMappingURL=style.css.map */
