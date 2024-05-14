@@ -42,12 +42,13 @@
     &__content{
         background-color: #f6f1eb;
         padding-top: 170px;
-        padding-bottom: 270px;
+        padding-bottom: 60px;
     }
     &__desc{
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 115px;
     }
     &__img {
         position: relative;
@@ -62,6 +63,7 @@
             background-color: transparent;
             @include typo($font, 12px, 400, 18px, #fff);
             transition: all 0.2s ease-in-out;
+            z-index: 2;
             .circle {
                 width: 32px;
                 height: 32px;
@@ -110,22 +112,140 @@
                 &:hover ~ .location.d4 {
                     background-color: #899ec1cc;
                 }
+                // &:hover ~ .detail__d2{
+                //     opacity: 1;
+                //     visibility: visible;
+                //     z-index: 3;
+                // }
             }
     
             &.d1 {
                 top: 160px;
                 left: 293px;
+                &.hover{
+                    background-color: #899ec1cc;
+                }
             }
     
             &.d4 {
                 top: 70px;
                 right: 180px;
+                &.hover{
+                    background-color: #899ec1cc;
+                }
             }
     
             &.d3 {
                 top: 163px;
                 right: 185px;
+                &.hover{
+                    background-color: #899ec1cc;
+                }
             }
+        }
+    }
+    &__d2{
+        position: absolute;
+        bottom: 0;
+        left: 350px;
+        width: 432px;
+        height: 263px;
+        transition: all 0.2s;
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        &:hover{
+            opacity: 1;
+            visibility: visible;
+        }
+        &.show{
+            opacity: 1;
+            visibility: visible;
+            
+        }
+        &--content{
+            background-color: $color-primary;
+            padding: 0 24px 24px 24px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .icon{
+                position: absolute;
+                left: -20px;
+                top: 30px
+            }
+        }
+        &--title{
+            @include typo($font,60px,400,90px,#fff);
+            margin-bottom: 4px;
+        }
+        &--info{
+            @include typo($font,20px,400,30px,#fff);
+            margin-bottom: 24px;
+        }
+        &--desc{
+            padding-top: 24px;
+            border-top: 1px solid #FFFFFF33;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .total,
+            .acreage{
+                h4{
+                    @include typo($font,12px,400,18px,#FFFFFF99);
+                    margin-bottom: 8px;
+                }
+                p{
+                    @include typo($font,20px,400,30px,#FFFFFF);
+                }
+            }
+        }
+        
+    }
+    &__footer{
+        padding-inline: 30px;
+    }
+    &__locate{
+        background:url('../images/location-default.svg');
+        width: 170px;
+        height: 140px;
+        &.change{
+            background:url('../images/location-active.svg');
+        }
+    }
+    &__dial{
+        width: 170px;
+    }
+    &__tech{
+        max-width: 67%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &--list{
+            gap: 40px;
+            margin-bottom: 24px;
+        }
+        &--item{
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            .box-color{
+                width: 32px;
+                height: 24px;
+                background-color: var(--bgc);
+            }
+            p{
+                @include typo($font,12px,400,30px,$color-text);
+                text-transform: uppercase;
+            }
+        }
+        &--content{
+            @include typo($font,9px,400,14px,$color-text);
+            max-width: 750px;
+            width: 100%;
         }
     }
 }
