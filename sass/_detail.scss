@@ -252,7 +252,43 @@
         background-color: #f8f1e9;
     }
     &__floor{
-
+        &--info{
+            .floor__dial{
+                width: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .floorplan__info{
+                display: flex;
+                gap: 0 40px;
+                .locate-in,
+                .locate-out{
+                    h3{
+                        @include typo($font,11px,400,27px,$color-text);
+                        text-transform: uppercase;
+                        border-bottom: 1px solid #75604B;
+                        padding-bottom: 9px;
+                    }
+                    ul{
+                        display: flex;
+                        align-items: center;
+                        gap: 0 20px;
+                        li{
+                            .box{
+                                h5{
+                                    @include typo($font,11px,400,27px,$color-text);
+                                    margin-bottom: 0;
+                                }
+                                p{
+                                    @include typo($font,14px,400,21px,$color-text);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     &__sidebar{
         background-color: $color-primary;
