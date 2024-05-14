@@ -407,5 +407,104 @@ p {
   max-width: 750px;
   width: 100%;
 }
+.detail__panel {
+  background-color: #f8f1e9;
+}
+.detail__sidebar {
+  background-color: #009337;
+  max-width: 400px;
+  height: 700px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.detail__sidebar--top h3 {
+  font-family: "SVNAdero", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 90px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.detail__sidebar--top p {
+  font-family: "SVNAdero", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 27px;
+}
+.detail__sidebar--top .house-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 24px;
+  margin-bottom: 32px;
+}
+.detail__sidebar--top .house-info .info:nth-child(3), .detail__sidebar--top .house-info .info:nth-child(4) {
+  padding-top: 27px;
+}
+.detail__sidebar--top .house-info .info h5 {
+  font-family: "SVNAdero", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+}
+.detail__sidebar--top .house-info .info p {
+  padding-bottom: 20px;
+}
+.detail__sidebar--bottom .list-img {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.detail__sidebar--bottom .list-img .img {
+  position: relative;
+}
+.detail__sidebar--bottom .list-img .img:hover img {
+  opacity: 0.5;
+}
+.detail__sidebar--bottom .list-img .img:hover::after, .detail__sidebar--bottom .list-img .img:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.detail__sidebar--bottom .list-img .img::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-right: solid 5px transparent;
+  border-left: solid 5px transparent;
+  border-bottom: solid 5px #fff;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+.detail__sidebar--bottom .list-img .img::after {
+  position: absolute;
+  content: var(--content);
+  bottom: -40px;
+  left: 0;
+  font-family: "SVNAdero", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #75604B;
+  width: 100px;
+  transform: translateX(-25%);
+  background-color: #fff;
+  text-align: center;
+  padding-block: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
 
 /*# sourceMappingURL=style.css.map */

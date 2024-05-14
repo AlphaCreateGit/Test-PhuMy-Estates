@@ -248,4 +248,101 @@
             width: 100%;
         }
     }
+    &__panel{
+        background-color: #f8f1e9;
+    }
+    &__floor{
+
+    }
+    &__sidebar{
+        background-color: $color-primary;
+        max-width: 400px;
+        height: 700px;
+        width: 100%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &--top{
+            h3{
+                @include typo($font,60px,400,90px,#fff);
+                margin-bottom: 4px;
+            }
+            p{
+                @include typo($font,20px,400,30px,#fff);
+                border-bottom: 1px solid #fff;
+                padding-bottom: 27px;
+            }
+            .house-info{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding-top: 24px;
+                margin-bottom: 32px;
+                .info{
+                    &:nth-child(3),
+                    &:nth-child(4){
+                        padding-top:27px ;
+                    }
+                    h5{
+                        @include typo($font,11px,400,18px,#FFFFFF99);
+                        margin-bottom: 8px;
+                    }
+                    p{
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+        &--bottom{
+            .list-img{
+                display: flex;
+                align-items: center;
+                gap:16px;
+                .img{
+                    position: relative;
+                    &:hover{
+                        img{
+                            opacity: 0.5;
+                        }
+                        &::after,
+                        &::before{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 5px;
+                        height: 5px;
+                        border-right:solid 5px transparent ;
+                        border-left:solid 5px transparent ;
+                        border-bottom: solid 5px #fff;
+                        bottom: -6px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.2s ease;
+                    }
+                    &::after{
+                        position: absolute;
+                        content: var(--content);
+                        bottom: -40px;
+                        left: 0;
+                        @include typo($font,10px,400,14px,$color-text);
+                        width: 100px;
+                        transform: translateX(-25%);
+                        background-color: #fff;
+                        text-align: center;
+                        padding-block: 10px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.2s ease;
+                    }
+                }
+            }
+        }
+    }
 }
