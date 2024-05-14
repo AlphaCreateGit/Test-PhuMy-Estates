@@ -262,6 +262,7 @@
             .floorplan__info{
                 display: flex;
                 gap: 0 40px;
+                margin-bottom: 45px;
                 .locate-in,
                 .locate-out{
                     h3{
@@ -286,6 +287,11 @@
                             }
                         }
                     }
+                }
+            }
+            .floorplan__content{
+                p{
+                    @include typo($font,10px,400,14px,$color-text);
                 }
             }
         }
