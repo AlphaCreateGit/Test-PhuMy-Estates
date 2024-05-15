@@ -67,6 +67,11 @@ p {
   margin-bottom: 0;
 }
 
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .header {
   position: fixed;
   width: 100%;
