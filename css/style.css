@@ -409,6 +409,53 @@ p {
 }
 .detail__panel {
   background-color: #f8f1e9;
+  position: relative;
+}
+.detail__panel .detail__icon--phone {
+  position: absolute;
+  content: "";
+  bottom: 60px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  background: url("../images/Phone.svg");
+}
+.detail__panel .custom {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0 50px;
+}
+.detail__panel .custom .nav {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 0;
+  padding-right: 40px;
+}
+.detail__panel .custom .nav p {
+  font-family: "SVNAdero", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #75604B;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.detail__panel .custom .nav-link {
+  width: 56px;
+  height: 56px;
+  background-color: #fff;
+  font-family: "SVNAdero", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #75604B;
+  border-radius: 50%;
+}
+.detail__panel .custom .nav-link.active {
+  background-color: #75604B;
+  color: #fff;
 }
 .detail__floor--info .floor__dial {
   width: 80px;
@@ -416,10 +463,32 @@ p {
   justify-content: center;
   align-items: center;
 }
+.detail__floor--info .floor__floorplan {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding-bottom: 70px;
+  width: 100%;
+}
+.detail__floor--info .floorplan__img {
+  margin-bottom: 75px;
+  width: 100%;
+}
+@media (max-width: 1440px) {
+  .detail__floor--info .floorplan__img.f4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .detail__floor--info .floorplan__info {
   display: flex;
   gap: 0 40px;
   margin-bottom: 45px;
+}
+.detail__floor--info .floorplan__info .locate-in.f2,
+.detail__floor--info .floorplan__info .locate-out.f2 {
+  width: 100%;
 }
 .detail__floor--info .floorplan__info .locate-in h3,
 .detail__floor--info .floorplan__info .locate-out h3 {
@@ -436,7 +505,7 @@ p {
 .detail__floor--info .floorplan__info .locate-out ul {
   display: flex;
   align-items: center;
-  gap: 0 20px;
+  gap: 0 30px;
 }
 .detail__floor--info .floorplan__info .locate-in ul li .box h5,
 .detail__floor--info .floorplan__info .locate-out ul li .box h5 {
@@ -471,6 +540,22 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+}
+.detail__sidebar--icon {
+  position: absolute;
+  content: "";
+  width: 56px;
+  height: 56px;
+  top: 45px;
+  right: 0;
+  transform: translateX(50%);
+  background: url("../images/icon-close.svg");
+  transition: all 0.3s ease-in-out;
+}
+.detail__sidebar--icon:hover {
+  background: url("../images/icon-close-hover.svg");
+  cursor: pointer;
 }
 .detail__sidebar--top h3 {
   font-family: "SVNAdero", sans-serif;

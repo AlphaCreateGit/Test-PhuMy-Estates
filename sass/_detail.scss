@@ -250,6 +250,46 @@
     }
     &__panel{
         background-color: #f8f1e9;
+        position: relative;
+        .detail__icon--phone{
+            position: absolute;
+            content: '';
+            bottom: 60px;
+            right: 40px;
+            width: 56px;
+            height: 56px;
+            background: url('../images/Phone.svg');
+        }
+        .custom{
+            display: flex;
+            flex-direction: row-reverse;
+            gap:0 50px;
+            .nav{
+                flex-wrap: nowrap;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 16px 0;
+                padding-right: 40px;
+                // width: 150px;
+                p{
+                    @include typo($font,12px,400,30px,$color-text);
+                    text-transform: uppercase;
+                    margin-bottom: 8px;
+                }
+                &-link{
+                    width: 56px;
+                    height: 56px;
+                    background-color: #fff;
+                    @include typo($font,14px,400,26px,$color-text);
+                    border-radius: 50%;
+                    &.active{
+                        background-color: $color-text;
+                        color: #fff;
+                    }
+                }
+            }
+        }
     }
     &__floor{
         &--info{
@@ -259,12 +299,38 @@
                 justify-content: center;
                 align-items: center;
             }
+            .floor__floorplan{
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                padding-bottom: 70px;
+                width: 100%;
+            }
+            .floorplan__img{
+                margin-bottom: 75px;
+                width: 100%;
+               @media (max-width:1440px){
+                &.f4{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                 }
+               }
+                // aspect-ratio: 767 / 230;
+                // img{
+                //     width: 100%;
+                //     height: 100%;
+                // }
+            }
             .floorplan__info{
                 display: flex;
                 gap: 0 40px;
                 margin-bottom: 45px;
                 .locate-in,
                 .locate-out{
+                    &.f2{
+                        width: 100%;
+                    }
                     h3{
                         @include typo($font,11px,400,27px,$color-text);
                         text-transform: uppercase;
@@ -274,7 +340,7 @@
                     ul{
                         display: flex;
                         align-items: center;
-                        gap: 0 20px;
+                        gap: 0 30px;
                         li{
                             .box{
                                 h5{
@@ -305,6 +371,22 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
+        &--icon{
+            position: absolute;
+            content: '';
+            width: 56px;
+            height: 56px;
+            top: 45px;
+            right: 0;
+            transform: translateX(50%);
+            background:url('../images/icon-close.svg');
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background:url('../images/icon-close-hover.svg');
+                cursor: pointer;
+            }
+        }
         &--top{
             h3{
                 @include typo($font,60px,400,90px,#fff);
